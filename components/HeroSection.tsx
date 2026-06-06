@@ -1,6 +1,8 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, MessageCircle, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -12,12 +14,11 @@ export default function HeroSection() {
         const playPromise = videoRef.current.play();
         if (playPromise !== undefined) {
           playPromise.catch((error) => {
-            console.warn('Video playback was prevented or interrupted:', error);
-            // Graceful fallback to dark gradient
+            console.warn('Video playback prevented:', error);
           });
         }
       } catch (error) {
-        console.warn('Direct video.play() call failed:', error);
+        console.warn('Playback failed:', error);
         setVideoError(true);
       }
     }
@@ -44,7 +45,7 @@ export default function HeroSection() {
       opacity: 1,
       y: 0,
       transition: {
-        ease: [0.4, 0, 0.2, 1] as const,
+        ease: [0.4, 0, 0.2, 1] as any,
         duration: 0.7,
       },
     },
@@ -56,7 +57,6 @@ export default function HeroSection() {
       aria-label="Welcome Introduction"
       className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-obsidian"
     >
-      {/* Background Video Layer with Premium Poster for LCP */}
       {!videoError ? (
         <video
           id="hero-bg-video"
@@ -74,11 +74,9 @@ export default function HeroSection() {
         <div id="hero-fallback-gradient" className="absolute inset-0 bg-gradient-to-br from-obsidian via-surface to-obsidian animate-pulse duration-[8000ms]" />
       )}
 
-      {/* Luxury Gradient Shades for text readability */}
       <div id="hero-vignette" className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/35 to-obsidian/85 select-none pointer-events-none" />
       <div id="hero-vignette-sides" className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,#0A0A0A_95%)] opacity-90 select-none pointer-events-none" />
 
-      {/* Hero Content Block */}
       <motion.div
         id="hero-content-wrapper"
         variants={containerVariants}
@@ -86,7 +84,6 @@ export default function HeroSection() {
         animate="visible"
         className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl"
       >
-        {/* Brand Pre-label to establish authority */}
         <motion.span
           variants={itemVariants}
           className="font-inter text-gold text-[11px] sm:text-xs tracking-[0.4em] uppercase mb-4 block"
@@ -94,7 +91,6 @@ export default function HeroSection() {
           WELCOME TO LEXZY AUTOS NIGERIA
         </motion.span>
 
-        {/* ONE H1 per page for local SEO ranking */}
         <motion.h1
           id="hero-main-headline"
           variants={itemVariants}
@@ -103,14 +99,12 @@ export default function HeroSection() {
           Your Dream Car, Delivered.
         </motion.h1>
 
-        {/* Gold Accent Spacer Line */}
         <motion.div
           id="hero-accent-divider"
           variants={itemVariants}
           className="h-[1px] w-20 bg-gold mb-8"
         />
 
-        {/* Dynamic target keyword-integrated Subhead */}
         <motion.p
           id="hero-subhead"
           variants={itemVariants}
@@ -119,13 +113,11 @@ export default function HeroSection() {
           Ibadan and Lagos's most trusted destination for brand new, tokunbo, and luxury exotic cars.
         </motion.p>
 
-        {/* Call to Actions Layer */}
         <motion.div
           id="hero-actions-container"
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
         >
-          {/* Main Collection CTA */}
           <a
             id="hero-cta-collection"
             href="#gallery"
@@ -135,7 +127,6 @@ export default function HeroSection() {
             <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
 
-          {/* Secure WhatsApp Desk CTA */}
           <a
             id="hero-cta-whatsapp"
             href="https://wa.me/2347065000000"
@@ -149,7 +140,6 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll Down Indicator */}
       <div
         id="hero-indicator"
         className="absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center justify-center pointer-events-none"

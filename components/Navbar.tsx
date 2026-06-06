@@ -1,7 +1,13 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { NavItem } from '../types';
+import { motion, AnimatePresence } from 'framer-motion';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'About Us', href: '#about' },
@@ -58,7 +64,7 @@ export default function Navbar() {
             LEXZY AUTOS
           </a>
 
-          {/* Desktop Navigation - Semantic HTML */}
+          {/* Desktop Navigation */}
           <nav id="nav-desktop" aria-label="Main navigation" className="hidden md:flex items-center space-x-10">
             {NAV_ITEMS.map((item, idx) => (
               <a
@@ -68,13 +74,12 @@ export default function Navbar() {
                 className="group relative font-inter text-xs font-light tracking-[0.2em] text-cream/90 hover:text-gold transition-colors duration-300 py-2"
               >
                 {item.label}
-                {/* Underline slide transform */}
                 <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gold scale-x-0 origin-left transition-transform duration-300 ease-[0.4,0,0.2,1] group-hover:scale-x-100" />
               </a>
             ))}
           </nav>
 
-          {/* Mobile Toggle Button */}
+          {/* Mobile Hamburguer Toggle */}
           <button
             id="nav-mobile-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -87,7 +92,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Drawer Overlay & Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -105,7 +110,7 @@ export default function Navbar() {
               initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -30, opacity: 0 }}
-              transition={{ ease: [0.4, 0, 0.2, 1] as const, duration: 0.4 }}
+              transition={{ ease: [0.4, 0, 0.2, 1], duration: 0.4 }}
               className="px-12 flex flex-col items-center space-y-8"
               onClick={(e) => e.stopPropagation()}
             >

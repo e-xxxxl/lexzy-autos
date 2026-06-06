@@ -1,6 +1,14 @@
-import { motion } from 'motion/react';
+"use client";
+
+import { motion } from 'framer-motion';
 import { Car, Star, MessageCircle, CheckCircle } from 'lucide-react';
-import { ServiceItem } from '../types';
+
+interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  iconName: 'Car' | 'Star' | 'MessageCircle' | 'CheckCircle';
+}
 
 const SERVICES_DATA: ServiceItem[] = [
   {
@@ -52,7 +60,7 @@ export default function ServicesSection() {
       opacity: 1,
       y: 0,
       transition: {
-        ease: [0.4, 0, 0.2, 1] as const,
+        ease: [0.4, 0, 0.2, 1] as any,
         duration: 0.7,
       },
     },
@@ -65,7 +73,6 @@ export default function ServicesSection() {
       className="py-24 sm:py-32 w-full bg-obsidian border-b border-gold/5 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
-        {/* Section Header */}
         <div id="services-header" className="text-center mb-20 max-w-2xl mx-auto">
           <span
             id="services-sublabel"
@@ -85,7 +92,6 @@ export default function ServicesSection() {
           <div className="w-12 h-[1px] bg-gold/40 mx-auto mt-6" />
         </div>
 
-        {/* 4-Card Architectural Grid */}
         <motion.div
           id="services-grid"
           variants={containerVariants}
@@ -103,13 +109,11 @@ export default function ServicesSection() {
                 variants={cardVariants}
                 className="group relative bg-surface p-10 border-t-2 border-gold flex flex-col justify-between h-full transition-colors duration-500 hover:bg-elevated cursor-default"
               >
-                {/* Decorative numeric ordering */}
                 <span className="absolute top-3 right-3 font-mono text-[10px] text-whisper/30 select-none">
                   0{idx + 1}
                 </span>
 
                 <div className="flex flex-col space-y-6">
-                  {/* Icon with scaling transition */}
                   <div className="text-gold">
                     <IconComponent
                       id={`service-icon-${service.id}`}
@@ -119,7 +123,6 @@ export default function ServicesSection() {
                     />
                   </div>
 
-                  {/* Card Title - Semantic H3 */}
                   <h3
                     id={`service-title-${service.id}`}
                     className="font-cormorant text-cream text-2xl font-light tracking-wide"
@@ -127,7 +130,6 @@ export default function ServicesSection() {
                     {service.title}
                   </h3>
 
-                  {/* Description - Inter 300 */}
                   <p
                     id={`service-description-${service.id}`}
                     className="font-inter text-muted text-sm font-light leading-relaxed text-left"
@@ -142,7 +144,6 @@ export default function ServicesSection() {
           })}
         </motion.div>
 
-        {/* Bottom Epilogue */}
         <div id="services-epilogue" className="text-center mt-16 select-none">
           <p className="font-cormorant italic text-whisper text-sm">
             * Driven by honesty, backed by absolute professional mechanics in Ibadan and Lagos.

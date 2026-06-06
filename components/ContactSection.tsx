@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, FormEvent } from 'react';
 import { MapPin, Phone, Mail, CheckCircle2 } from 'lucide-react';
 
@@ -15,13 +17,11 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulated premium response delay
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
 
-      // Automatically clear confirmation message after custom delay
       setTimeout(() => {
         setIsSubmitted(false);
       }, 7000);
@@ -35,7 +35,6 @@ export default function ContactSection() {
       className="py-32 sm:py-40 bg-obsidian border-b border-gold/5 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
-        {/* Section Header */}
         <div id="contact-header" className="text-center mb-16 max-w-2xl mx-auto">
           <span
             id="contact-sublabel"
@@ -56,7 +55,6 @@ export default function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mt-16">
-          {/* Left panel: Info Details (Grid span 5) */}
           <div id="contact-info-panel" className="lg:col-span-5 space-y-12 text-left">
             <div className="space-y-4 max-w-md">
               <h3 className="font-cormorant text-cream text-3xl font-light tracking-wide italic">
@@ -68,7 +66,6 @@ export default function ContactSection() {
             </div>
 
             <div className="space-y-8">
-              {/* Location Node */}
               <div className="flex items-start space-x-6">
                 <div className="text-gold mt-1">
                   <MapPin size={20} strokeWidth={1.5} />
@@ -83,7 +80,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* WhatsApp Call / Chat link */}
               <div className="flex items-start space-x-6">
                 <div className="text-gold mt-1">
                   <Phone size={20} strokeWidth={1.5} />
@@ -103,7 +99,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Electronic Mail */}
               <div className="flex items-start space-x-6">
                 <div className="text-gold mt-1">
                   <Mail size={20} strokeWidth={1.5} />
@@ -122,7 +117,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Social Trust Line */}
             <div className="pt-4 border-t border-gold/10">
               <p className="font-inter text-gold text-xs tracking-wider uppercase font-medium">
                 Trusted by 500+ Nigerians across Ibadan and Lagos.
@@ -130,11 +124,9 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right panel: Active Form (Grid span 7) */}
           <div id="contact-form-panel" className="lg:col-span-7 w-full">
             <div className="bg-surface border border-gold/10 p-8 sm:p-12 relative rounded-sm">
               {isSubmitted ? (
-                /* Success Notification State with gold elements */
                 <div
                   id="contact-success-state"
                   className="flex flex-col items-center text-center py-12 space-y-6"
@@ -151,7 +143,6 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form id="inquiring-form" onSubmit={handleSubmit} className="space-y-10">
-                  {/* Name field */}
                   <div className="relative">
                     <input
                       type="text"
@@ -170,7 +161,6 @@ export default function ContactSection() {
                     </label>
                   </div>
 
-                  {/* Email & Phone grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="relative">
                       <input
@@ -209,7 +199,6 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  {/* message field */}
                   <div className="relative">
                     <textarea
                       id="message"
@@ -228,7 +217,6 @@ export default function ContactSection() {
                     </label>
                   </div>
 
-                  {/* Submit Button */}
                   <div className="pt-4">
                     <button
                       id="inquiring-submit-btn"

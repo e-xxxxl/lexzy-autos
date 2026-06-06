@@ -8,9 +8,7 @@ export default function Footer() {
       className="bg-obsidian border-t border-gold/10 py-16 sm:py-20 text-cream"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col space-y-12">
-        {/* Upper segment */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
-          {/* Left Block - Wordmark */}
           <div className="text-center md:text-left space-y-4">
             <a
               id="footer-logo"
@@ -19,13 +17,11 @@ export default function Footer() {
             >
               LEXZY AUTOS
             </a>
-            {/* Fine print */}
             <p id="footer-fineprint" className="font-inter text-muted text-[11px] sm:text-xs font-light tracking-widest uppercase max-w-sm leading-relaxed">
               We deal in brand new, tokunbo, and luxury exotic cars across Nigeria.
             </p>
           </div>
 
-          {/* Center Block - Branch Locations */}
           <div className="text-center space-y-4">
             <h4 className="font-inter text-gold text-[10px] tracking-widest uppercase font-light">
               SHOWROOM PRESENCE
@@ -35,7 +31,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Right Block - Digital Channels */}
           <div className="text-center md:text-right space-y-4">
             <h4 className="font-inter text-gold text-[10px] tracking-widest uppercase font-light">
               CONNECT ONLINE
@@ -75,7 +70,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Lower segment / Copyright */}
         <div className="pt-8 border-t border-gold/5 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p id="footer-copyright" className="font-inter text-neutral-500 text-[10px] tracking-widest uppercase font-light">
             &copy; 2025 Lexzy Autos. All rights reserved.

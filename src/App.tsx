@@ -1,14 +1,11 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import GallerySection from './components/GallerySection';
 import ContactSection from './components/ContactSection';
+import FAQSection from './components/FAQSection';
+import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -32,11 +29,16 @@ export default function App() {
 
         {/* Concierge reservation submission form */}
         <ContactSection />
+
+        {/* Brand native FAQ block */}
+        <FAQSection />
       </main>
 
       {/* Showroom copyright footer */}
       <Footer />
+
+      {/* High-engagement floating WhatsApp button */}
+      <WhatsAppButton />
     </div>
   );
 }
-

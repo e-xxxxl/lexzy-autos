@@ -1,4 +1,7 @@
-import { motion } from 'motion/react';
+"use client";
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function AboutSection() {
   const leftVariants = {
@@ -6,7 +9,7 @@ export default function AboutSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { ease: [0.4, 0, 0.2, 1] as const, duration: 0.7 },
+      transition: { ease: [0.4, 0, 0.2, 1] as any, duration: 0.7 },
     },
   };
 
@@ -15,7 +18,7 @@ export default function AboutSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { ease: [0.4, 0, 0.2, 1] as const, duration: 0.7 },
+      transition: { ease: [0.4, 0, 0.2, 1] as any, duration: 0.7 },
     },
   };
 
@@ -35,7 +38,6 @@ export default function AboutSection() {
           viewport={{ once: true, margin: '-100px' }}
           className="flex flex-col justify-center py-20 px-8 sm:px-16 md:px-24 lg:py-32 lg:px-20 bg-obsidian text-left"
         >
-          {/* Section Indicator */}
           <span
             id="about-section-label"
             className="font-inter text-gold text-xs font-light tracking-[0.4em] uppercase mb-8 block select-none"
@@ -43,7 +45,6 @@ export default function AboutSection() {
             OUR PROFILE / LE PROFIL
           </span>
 
-          {/* Semantic H2 */}
           <h2
             id="about-heading"
             className="font-cormorant text-cream text-3xl sm:text-4xl md:text-5xl font-light tracking-wide mb-8"
@@ -51,14 +52,12 @@ export default function AboutSection() {
             We Know What Drives You
           </h2>
 
-          {/* Pull Quote */}
           <blockquote id="about-pullquote" className="mb-10 border-l border-gold/20 pl-6">
             <p className="font-cormorant italic text-gold text-2xl sm:text-3xl md:text-4xl font-light leading-snug tracking-wide">
               “We don't just sell cars — we help you arrive in style.”
             </p>
           </blockquote>
 
-          {/* Brand copy for young Nigerian professionals */}
           <div id="about-narrative" className="space-y-6 max-w-2xl font-inter text-muted text-[15px] sm:text-[16px] font-light leading-relaxed">
             <p>
               At Lexzy Autos, we've built our reputation on one thing: <strong>trust</strong>. Based in Ibadan with a strong presence in Lagos, we've helped hundreds of young Nigerians find cars that match their lifestyle, budget, and ambitions — without the stress.
@@ -94,10 +93,8 @@ export default function AboutSection() {
             className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent z-10 pointer-events-none block lg:hidden"
           />
 
-          {/* Fully optimized, descriptive sports car image */}
-          <img
+          <Image
             id="about-sports-car"
-            referrerPolicy="no-referrer"
             src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1000&q=85"
             alt="Lexzy Autos — Premium sports car representing luxury and curated journeys in Ibadan and Lagos, Nigeria"
             className="w-full h-full object-cover filter saturate-[0.8] contrast-[1.05] transition-transform duration-[2000ms] hover:scale-105"

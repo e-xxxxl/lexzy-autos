@@ -1,4 +1,12 @@
-import { GalleryItem } from '../types';
+"use client";
+
+import Image from 'next/image';
+
+interface GalleryItem {
+  id: string;
+  unsplashId: string;
+  alt: string;
+}
 
 const GALLERY_IMAGES: GalleryItem[] = [
   {
@@ -42,7 +50,6 @@ export default function GallerySection() {
       aria-labelledby="gallery-heading"
       className="py-24 sm:py-32 w-full bg-obsidian overflow-hidden"
     >
-      {/* Decorative subtitle / label row */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between mb-16">
         <div className="flex-1 h-[1px] bg-gold/15" />
         <span
@@ -54,7 +61,6 @@ export default function GallerySection() {
         <div className="flex-1 h-[1px] bg-gold/15" />
       </div>
 
-      {/* Main headings */}
       <div className="text-center mb-16 px-6">
         <h2 id="gallery-heading" className="sr-only">Our Curatorial Selection</h2>
         <p className="font-cormorant italic text-cream text-3xl sm:text-4xl font-light">
@@ -63,7 +69,6 @@ export default function GallerySection() {
       </div>
 
       <div id="gallery-marquee-container" className="flex flex-col space-y-6 md:space-y-8 w-full select-none">
-        {/* Row 1: Leftward moving scroll */}
         <div className="relative w-full overflow-hidden py-2" role="region" aria-label="First gallery row">
           <div
             id="gallery-marquee-track-1"
@@ -74,11 +79,10 @@ export default function GallerySection() {
                 key={`row1-${img.id}-${index}`}
                 className="w-[280px] h-[190px] sm:w-[360px] sm:h-[240px] md:w-[480px] md:h-[320px] flex-shrink-0 relative overflow-hidden bg-surface border border-gold/10 group rounded-sm"
               >
-                {/* Gold tone blend overlay */}
                 <div className="absolute inset-0 bg-gold/5 mix-blend-color z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 to-transparent z-10 pointer-events-none" />
 
-                <img
+                <Image
                   src={`https://images.unsplash.com/photo-${img.unsplashId}?auto=format&fit=crop&w=650&q=85`}
                   alt={img.alt}
                   width={480}
@@ -91,7 +95,6 @@ export default function GallerySection() {
           </div>
         </div>
 
-        {/* Row 2: Rightward moving scroll (reversed marquee) */}
         <div className="relative w-full overflow-hidden py-2" role="region" aria-label="Second gallery row">
           <div
             id="gallery-marquee-track-2"
@@ -102,11 +105,10 @@ export default function GallerySection() {
                 key={`row2-${img.id}-${index}`}
                 className="w-[280px] h-[190px] sm:w-[360px] sm:h-[240px] md:w-[480px] md:h-[320px] flex-shrink-0 relative overflow-hidden bg-surface border border-gold/10 group rounded-sm"
               >
-                {/* Gold tone blend overlay */}
                 <div className="absolute inset-0 bg-gold/5 mix-blend-color z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 to-transparent z-10 pointer-events-none" />
 
-                <img
+                <Image
                   src={`https://images.unsplash.com/photo-${img.unsplashId}?auto=format&fit=crop&w=650&q=85`}
                   alt={img.alt}
                   width={480}
