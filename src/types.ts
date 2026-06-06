@@ -12,8 +12,10 @@ export interface ServiceItem {
 
 export interface GalleryItem {
   id: string;
-  unsplashId: string;
+  src: string;
   alt: string;
+  fallbackTitle: string;
+  fallbackIcon: 'SportsCar' | 'Interior' | 'Steering' | 'Grille' | 'Roadster' | 'Sedan';
 }
 
 export interface ContactDetail {
@@ -22,3 +24,5 @@ export interface ContactDetail {
   value: string;
   iconName: 'MapPin' | 'Phone' | 'Mail';
 }
+
+

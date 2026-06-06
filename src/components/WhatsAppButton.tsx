@@ -4,7 +4,7 @@ export default function WhatsAppButton() {
   return (
     <a
       id="floating-whatsapp-btn"
-      href="https://wa.me/2347065000000"
+      href="https://wa.me/+2347041476698"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Lexzy Autos on WhatsApp"

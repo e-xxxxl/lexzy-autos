@@ -129,7 +129,7 @@ export default function HeroSection() {
 
           <a
             id="hero-cta-whatsapp"
-            href="https://wa.me/2347065000000"
+            href="https://wa.me/+2347041476698"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto flex items-center justify-center gap-2 border border-gold/40 text-gold hover:border-gold hover:bg-gold/5 px-8 py-4 tracking-[0.2em] text-xs font-inter font-light uppercase transition-all duration-500 rounded-sm hover:-translate-y-0.5"

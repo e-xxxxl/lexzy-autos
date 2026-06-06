@@ -7,6 +7,7 @@ import ContactSection from './components/ContactSection';
 import FAQSection from './components/FAQSection';
 import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
+import CACSection from './components/CACSection';
 
 export default function App() {
   return (
@@ -29,7 +30,7 @@ export default function App() {
 
         {/* Concierge reservation submission form */}
         <ContactSection />
-
+<CACSection/>
         {/* Brand native FAQ block */}
         <FAQSection />
       </main>

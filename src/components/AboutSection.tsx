@@ -61,7 +61,7 @@ export default function AboutSection() {
           {/* Brand copy for young Nigerian professionals */}
           <div id="about-narrative" className="space-y-6 max-w-2xl font-inter text-muted text-[15px] sm:text-[16px] font-light leading-relaxed">
             <p>
-              At Lexzy Autos, we've built our reputation on one thing: <strong>trust</strong>. Based in Ibadan with a strong presence in Lagos, we've helped hundreds of young Nigerians find cars that match their lifestyle, budget, and ambitions — without the stress.
+              At Lexzy Autos, we've built our reputation on one thing: <strong>trust</strong>. Based in Ibadan with a strong presence in Lagos, we've helped hundreds of Nigerians find cars that match their lifestyle, budget, and ambitions — without the stress.
             </p>
             <p>
               Whether you're stepping into your first car, upgrading to a clean tokunbo, or treating yourself to something exotic, our team takes the time to understand what you actually need — not just what looks good on paper.

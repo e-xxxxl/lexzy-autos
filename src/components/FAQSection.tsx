@@ -97,7 +97,7 @@ export default function FAQSection() {
           <p className="font-inter text-xs text-muted font-light tracking-wide">
             Still have questions? Chat directly with us on{' '}
             <a
-              href="https://wa.me/2347065000000"
+              href="https://wa.me/+2347041476698"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:text-gold-light underline decoration-gold/20 hover:decoration-gold transition-colors duration-300"
