@@ -1,0 +1,6 @@
+{
+  "name": "Lexzy Autos",
+  "description": "An ultra-premium automotive brand portfolio website representing the pinnacle of luxury, curated journeys, and bespoke motoring services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
